@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-//router.post('/create-category', require('./Services/createCategory'));
+router.post('/create-category', require('./Services/createCategory'));
 
 router.get('/get-types', require('./Services/findType'));
 router.post('/create-type', require('./Services/createType'));

@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var cors = require('cors');
+var config = require('./config');
 
 var app = express();
 var server = http.createServer(app);
@@ -15,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //database
-var mongoDb = mongoose.connect('mongodb://localhost/finance-control').connection;
+var mongoDb = mongoose.connect(config.database).connection;
 
 mongoDb.on('connected', function(){
     console.log('mongo connected');
